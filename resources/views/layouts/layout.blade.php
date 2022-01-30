@@ -22,15 +22,27 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Ana səhifə</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blog">Blog</a>
+                        <a class="nav-link active" href="/blog">Postlar</a>
                     </li>
+                    @if (Auth::check())
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">{{Auth::user()->name}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/logout">Çıx</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/login">Daxil ol</a>
+                        </li>
+                    @endif
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <button class="btn btn-success" type="submit">Axtar</button>
                 </form>
             </div>
         </div>

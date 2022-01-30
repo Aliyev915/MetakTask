@@ -1,24 +1,15 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="col-md-8 offset-md-2">
-            <form action="">
-                <div class="form-group my-2">
-                    <label for="">Başlıq</label>
-                    <input type="text" name="title" class="form-control">
+            <div class="card">
+                <img src="{{ asset('images/img-01.jpg') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $blog->title }}</h5>
+                  <p class="card-text">{{ $blog->description }}</p>
                 </div>
-                <div class="form-group my-2">
-                    <label for="">Mətn</label>
-                    <input type="text" name="desciption" class="form-control">
-                </div>
-                <div class="form-group my-2">
-                    <label for="">Şəkil</label>
-                    <input type="text" name="image" class="form-control">
-                </div>
-
-                <button type="submit" class="btn btn-primary"></button>
-            </form>
+              </div>
         </div>
     </div>
 @endsection

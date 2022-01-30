@@ -21,7 +21,7 @@ $count = 17;
         <div class="row justify-content-center">
             <div class="col-md-4 col-sm-6">
                 <div class="card my-3">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('images/img-01.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -32,45 +32,45 @@ $count = 17;
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="card my-3">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('images/img-02.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="card my-3">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('images/img-03.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="card my-3">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('images/img-04.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6">
                 <div class="card my-3">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('images/img-05.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
                     </div>
                 </div>
             </div>
