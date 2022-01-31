@@ -7,6 +7,7 @@
                 <img src="{{ asset('images/img-01.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{ $blog->title }}</h5>
+                  <p>{{ $blog->created_at->format('Y M d h:i') }}</p>
                   <p class="card-text">{{ $blog->description }}</p>
                 </div>
               </div>

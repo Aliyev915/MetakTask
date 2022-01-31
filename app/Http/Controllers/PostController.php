@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index(Request $request){
         $page = $request->page ==null ? 1 : $request->page;
-        $blogs = Blog::all();
+        $blogs = Blog::all()->skip(($page-1)*5)->take(5);
         return view('blogs.index',['page'=>$page,'blogs'=>$blogs]);
     }
 
@@ -39,8 +39,9 @@ class PostController extends Controller
             'title'=>$request->title,
             'description'=>$request->description,
             'image'=>$path,
-            'date'=>Carbon::now()
+            'datetime'=>Carbon::now()
         ]);
-        return redirect()->back()->with('success','Əlavə olundu');
+        return redirect('/blog')->with('success','Əlavə olundu');
     }
+    
 }

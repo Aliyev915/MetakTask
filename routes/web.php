@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/blog', [PostController::class, 'index']);
-Route::get('/blog.detail/{id}', [PostController::class, 'detail']);
+Route::get('/blog/detail/{id}', [PostController::class, 'detail']);
 
 Route::middleware('checkUser')->group(function () {
     Route::get('/blog/create', [PostController::class, 'create']);

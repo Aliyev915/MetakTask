@@ -1,79 +1,29 @@
 @php
-$count = 17;
+$count = App\Models\Blog::all()->count();
 @endphp
 
 @extends('layouts.layout')
 
 @section('content')
-    <div class="toast d-flex align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-                Hello, world! This is a toast message.
-            </div>
-            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-    </div>
     <div class="container">
         <h2 class="text-center mt-5">
             Postlar
         </h2>
         <a href="/blog/create" class="btn btn-success w-25 text-center mx-auto my-3">Post Əlavə Et</a>
         <div class="row justify-content-center">
+            @foreach ($blogs as $blog)
             <div class="col-md-4 col-sm-6">
                 <div class="card my-3">
-                    <img src="{{ asset('images/img-01.jpg') }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('uploads/'.$blog->image) }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
+                        <h5 class="card-title">{{ $blog->title }}</h5>
+                        <span>{{ $blog->created_at->format('Y M d h:i') }}</span>
+                        <p class="card-text">{{ Str::length($blog->description)> 50 ? Str::substr($blog->description,0,50) : $blog->description }}</p>
+                        <a href="/blog/detail/{{ $blog->id }}" class="btn btn-primary">Daha ətraflı</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="card my-3">
-                    <img src="{{ asset('images/img-02.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="card my-3">
-                    <img src="{{ asset('images/img-03.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="card my-3">
-                    <img src="{{ asset('images/img-04.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="card my-3">
-                    <img src="{{ asset('images/img-05.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Daha ətraflı</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-4">
